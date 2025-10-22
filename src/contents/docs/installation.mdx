@@ -1,0 +1,55 @@
+## ⚙️ Shadcn Extended Configuration
+
+Before you begin, make sure [**shadcn/ui**](https://ui.shadcn.com/docs/installation) is installed and configured.
+
+---
+
+### 🪶 Step 1: Import Fonts
+
+Choose your fonts (e.g. from **Google Fonts**) and import them into your global CSS file — typically `globals.css`.
+
+```css
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&family=Poppins:wght@100..900&display=swap");
+```
+
+---
+
+### 🧩 Step 2: Define Font Variables
+
+Inside your `:root`, define your custom font variables:
+
+```css
+:root {
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace; /* optional */
+}
+```
+
+---
+
+### 🎨 Step 3: Extend Shadcn Theme Tokens
+
+Add these inside your **theme section** (for example, at the bottom of `globals.css` or inside a theme file):
+
+```css
+@theme inline {
+  --font-body: var(--font-body);
+  --font-heading: var(--font-heading);
+  --font-mono: var(--font-mono);
+}
+```
+
+---
+
+### 💅 Step 4: Update Base Styles
+
+Now extend your base layer to use the body font globally.
+
+```css
+@layer base {
+  body {
+    @apply font-body;
+  }
+}
+```
