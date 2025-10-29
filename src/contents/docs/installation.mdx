@@ -53,3 +53,16 @@ Now extend your base layer to use the body font globally.
   }
 }
 ```
+
+### 4. Override the `.container` class
+
+Adjust max width according to your need
+
+```css
+@layer override {
+  /* Override the container styles */
+  .container {
+    @apply mx-auto max-w-none px-4 sm:px-6 2xl:max-w-[1600px];
+  }
+}
+```
